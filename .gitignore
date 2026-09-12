@@ -1,0 +1,19 @@
+# Arquivos de Sistema e OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*~
+
+# Logs do Samba e Sistema
+*.log
+/var/log/
+
+# Arquivos Temporários do Cisco Packet Tracer
+*.pkz
+*.locks
+
+# Chaves Privadas e Credenciais (Segurança)
+*.pem
+*.key
+id_rsa
