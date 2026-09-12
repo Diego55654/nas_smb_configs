@@ -1,3 +1,5 @@
+
+PT-BR
 # **Configurações do NAS-SMB**
 
 As configurações principais do meu NAS HomeLab.
@@ -5,8 +7,14 @@ Construído por um laptop modelo antigo (Lgx130), usando o Samba Server (SMB3), 
 
 <img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/0ab4b02d-f3ae-4b25-a049-02e3048cfdaa" />
 
+OBS: IP's da imagem acima são meramente ilustrativos. Para mais detalhes, acesse o arquivo .plk e veja a rede funcionando no programa Cisco Packet Traccer.
+
+<img width="4608" height="3456" alt="1000085639" src="https://github.com/user-attachments/assets/a67b0341-4c7e-4af1-b2ec-e319e7723354" />
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/55d7f481-be13-4d84-9283-c8552d0755fa" />
 
+<hr>
+ENG
 
 # **NAS-SMB-CONFIG**
 The core configs from my NAS HomeLab.
@@ -14,4 +22,7 @@ Builded by an old model laptop (Lgx130), using  Samba Server (SMB3), it's may wo
 
 <img width="4608" height="3456" alt="1000085639" src="https://github.com/user-attachments/assets/a67b0341-4c7e-4af1-b2ec-e319e7723354" />
 
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/0ab4b02d-f3ae-4b25-a049-02e3048cfdaa" />
+
+NOTE: IPs in the image above are for illustrative purposes only. For more details, go to the.plk file and see the network working in the Cisco Packet Traccer program.
 
