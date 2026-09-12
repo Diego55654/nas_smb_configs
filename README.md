@@ -2,8 +2,11 @@
   <img src="https://github.com/user-attachments/assets/9b648b7f-2ce0-434a-98c2-f62435100ccc" alt="Stack Banner" width="100%">
 </p>
 
-# 🖥️ NAS-SMB HomeLab Configuration
-
+# NAS-SMB HomeLab Configuration
+![Debian](https://img.shields.io/badge/OS-Debian%2012-A81D24?style=flat&logo=debian&logoColor=white)
+![Samba](https://img.shields.io/badge/Service-Samba%20SMB3-blue?style=flat)
+![Tailscale](https://img.shields.io/badge/VPN-Tailscale-black?style=flat&logo=tailscale)
+![Architecture](https://img.shields.io/badge/Arch-32--bit%20x86-orange?style=flat)
 > Configurações e topologia de rede para um servidor NAS/SMB caseiro de baixo custo, otimizado para alta taxa de transferência no PlayStation 2 (OPL) e armazenamento em nuvem privada.
 
 ---
@@ -49,6 +52,45 @@ As configurações principais do meu **NAS HomeLab**. Construído a partir de um
 
 <br>
 
+### Exemplo de tabela de Endereçamento
+
+| Dispositivo | Interface | Endereço IP / Máscara | Função |
+| :--- | :--- | :--- | :--- |
+| **Debian Server** | xx | `192.168.22.10/24` | Servidor Samba (SMB3) |
+| **PS2 (OPL)** | Ethernet | `192.168.22.15/24` | Cliente de Jogos via Rede |
+| **Roteador Wi-Fi** | LAN/WLAN | `192.168.22.1/24` | Gateway & Servidor DHCP |
+| **Clientes Wi-Fi** | Wireless | DHCP (`192.168.22.50-100`) | Acesso Geral / Celulares |
+
+---
+
+### Configuração Rápida do Samba (`/etc/samba/smb.conf`)
+
+Exemplo do bloco de compartilhamento configurado para o OPL no Debian:
+
+```ini
+[global]
+   workgroup = WORKGROUP
+   server string = HomeLab NAS Server
+   security = user
+
+   # Compatibilidade de Protocolo e Autenticação com OPL (PS2)
+   server max protocol = SMB3
+   server min protocol = NT1
+   lanman auth = yes
+   ntlm auth = yes
+   raw NTLMv2 auth = yes
+   server signing = disabled
+   smb ports = 445 139
+
+[PS2SMB]
+   comment = Apenas compartilhamento de jogos para o OPL (leitura, somente)
+   path = /srv/samba/ps2
+   browsable = yes
+   guest ok = yes
+   public = yes
+   read only = no
+   valid users = ps2username
+```
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a67b0341-4c7e-4af1-b2ec-e319e7723354" alt="Hardware do Servidor" width="45%">
   &nbsp;&nbsp;
@@ -58,8 +100,18 @@ As configurações principais do meu **NAS HomeLab**. Construído a partir de um
 </details>
 
 ---
+---
 
+### Referências & Documentação para consulta 
+
+- **Debian Linux:** [Documentação Oficial do Debian 12 (Bookworm)](https://www.debian.org/doc/)
+- **Samba Project:** [Samba smb.conf Official Documentation](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
+- **Open PS2 Loader (OPL):** [OPL Official SMB Guide & Network Setup](https://ps2home.gitbook.io/official-display-item-documentation/guides/open-ps2-loader)
+- **Cisco Networking:** [Cisco Packet Tracer User Guide](https://www.netacad.com/courses/packet-tracer)
+- **Tailscale:** [Tailscale WireGuard Documentation](https://tailscale.com/kb/)
 <details>
+
+  
 <summary><b>🇺🇸 English (Click to expand)</b></summary>
 
 <br>
@@ -105,5 +157,15 @@ The core configurations of my **NAS HomeLab**. Built from an older model laptop 
   &nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/9aa03e3d-7bfc-42b6-bc99-6442ca42916c" alt="System Configuration" width="45%">
 </p>
+
+---
+
+### References & Documentation
+
+- **Debian Linux:** [Debian 12 (Bookworm) Official Documentation](https://www.debian.org/doc/)
+- **Samba Project:** [Samba smb.conf Official Manual](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html)
+- **Open PS2 Loader (OPL):** [OPL Official SMB Setup Guide](https://ps2home.gitbook.io/official-display-item-documentation/guides/open-ps2-loader)
+- **Cisco Networking:** [Cisco Packet Tracer Documentation](https://www.netacad.com/courses/packet-tracer)
+- **Tailscale:** [Tailscale WireGuard Setup Guide](https://tailscale.com/kb/)
 
 </details>
