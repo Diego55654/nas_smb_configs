@@ -152,6 +152,47 @@ The core configurations of my **NAS HomeLab**. Built from an older model laptop 
 
 <br>
 
+| Device | Interface | IP Address | Function |
+| :--- | :--- | :--- | :--- |
+| **Debian Server** | xx | `192.168.22.10/24` | Samba Server (SMB3) |
+| **PS2 (OPL)** | Ethernet | `192.168.22.15/24` | Game Client for games |
+| **Roteador Wi-Fi** | LAN/WLAN | `192.168.22.1/24` | Gateway & DHCP Server |
+| **Clientes Wi-Fi** | Wireless | DHCP (`192.168.22.50-100`) | General Acess/cellphone/laptops |
+
+
+<br>
+
+### Configuração Rápida do Samba (`/etc/samba/smb.conf`)
+
+An example of basic Samba Config to OPL:
+
+```ini
+[global]
+   workgroup = WORKGROUP
+   server string = HomeLab NAS Server
+   security = user
+
+   # Protocol Compatibility and Authentication with OPL (PS2)
+   server max protocol = SMB3
+   server min protocol = NT1
+   lanman auth = yes
+   ntlm auth = yes
+   raw NTLMv2 auth = yes
+   server signing = disabled
+   smb ports = 445 139
+
+[PS2SMB]
+   comment = only to share games during Network traffic 
+   path = /srv/samba/ps2
+   browsable = yes
+   guest ok = yes
+   public = yes
+   read only = no
+   valid users = ps2username
+```
+
+<br>
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a67b0341-4c7e-4af1-b2ec-e319e7723354" alt="Server Hardware" width="45%">
   &nbsp;&nbsp;
