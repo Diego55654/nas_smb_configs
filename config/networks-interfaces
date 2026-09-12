@@ -1,0 +1,16 @@
+#Caminho: /etc/network/interfaces 
+
+# Configuração de Loopback (PADRÃO)
+auto lo
+iface lo inet loopback
+
+# Exemplo considerando Interface de Rede Cabeada Principal (Ethernet) entre o servidor e o routedor sem fio
+# NOTA: Substitua 'SUA_INTERFACE_AQUI' pelo nome da sua placa de rede.
+# Para descobrir a sua interface em sistemas UNIX, rode no terminal: ip a
+
+auto SUA_INTERFACE_AQUI
+iface SUA_INTERFACE_AQUI inet static
+    address 192.168.22.x (IP da máquina)
+    netmask 255.255.255.0
+    gateway 192.168.22.1
+    dns-nameservers 192.168.22.1 8.8.8.8
