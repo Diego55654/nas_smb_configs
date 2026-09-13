@@ -6,6 +6,10 @@
 ![Debian](https://img.shields.io/badge/OS-Debian%2012-A81D24?style=flat&logo=debian&logoColor=white)
 ![Samba](https://img.shields.io/badge/Service-Samba%20SMB3-blue?style=flat)
 ![Tailscale](https://img.shields.io/badge/VPN-Tailscale-black?style=flat&logo=tailscale)
+
+https://github.com/user-attachments/assets/84be0b59-a752-4b01-a5df-9ba2403ca0f7
+
+
 ![Architecture](https://img.shields.io/badge/Arch-32--bit%20x86-orange?style=flat)
 > Configurações e topologia de rede para um servidor NAS/SMB caseiro de baixo custo, otimizado para alta taxa de transferência no PlayStation 2 (OPL) e armazenamento em nuvem privada.
 
