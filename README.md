@@ -24,9 +24,9 @@ https://github.com/user-attachments/assets/84be0b59-a752-4b01-a5df-9ba2403ca0f7
 
 As configurações principais do meu **NAS HomeLab**. Construído a partir de um laptop de modelo antigo (**LGX130**) rodando **Samba Server (SMB3)**, o sistema cumpre duas funções principais na rede:
 
-1. **Servidor de Jogos para PS2 (OPL via SMB):** A escolha do protocolo SMB para o PlayStation 2 garante uma **taxa de transferência significativamente superior** à porta USB 1.1 nativa do video-game. Isso reduz o tempo de carregamento: as chamadas *loading
-screens* e elimina travamentos (*stuttering*) nas cutscenes dos jogos.
-1.1. Script simples para fazer o Backup de todo conteúdo do pasta do OPL para um diretório qualquer: HD Externo/pendrive.
+1. **Servidor de Jogos para PS2 (OPL via SMB):** A escolha do protocolo SMB para o PlayStation 2 garante uma **taxa de transferência significativamente superior** à porta USB 1.1 nativa do video-game. Isso reduz o tempo de carregamento (as chamadas *loading screens*) e elimina travamentos (*stuttering*) nas cutscenes dos jogos.
+   * **1.1. Script de Backup Automático:** Inclui um script simples em Bash para realizar o backup completo do conteúdo da pasta do OPL para um diretório de destino (como um HD externo ou pendrive).
+
 2. **Nuvem Privada:** Funciona como um armazenamento centralizado (estilo Google Drive) para compartilhamento seguro de arquivos com amigos.
 
 <p align="center">
@@ -126,7 +126,9 @@ Exemplo do bloco de compartilhamento configurado para o OPL no Debian:
 
 The core configurations of my **NAS HomeLab**. Built from an older model laptop (**LGX130**) running **Samba Server (SMB3)**, the system fulfills two main roles:
 
-1. **PS2 Game Server (OPL via SMB):** Utilizing the SMB protocol for the PlayStation 2 delivers a **significantly higher data transfer rate** compared to the console's native USB 1.1 interface. This minimizes loading times and eliminates video FMV stuttering during gameplay.
+1. **PS2 Game Server (OPL via SMB):** Utilizing the SMB protocol for the PlayStation 2 delivers a **significantly higher data transfer rate** compared to the console's native USB 1.1 interface. This minimizes loading times (loading screens) and eliminates video FMV stuttering during gameplay.
+   * **1.1. Automatic Backup Script:** Includes a simple Bash script to back up the entire OPL folder content to any designated destination directory (such as an external HDD or USB flash drive).
+
 2. **Private Cloud Storage:** Acts as a centralized network storage (Google Drive alternative) for seamless file sharing with friends.
 
 <p align="center">
