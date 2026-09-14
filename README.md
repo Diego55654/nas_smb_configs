@@ -22,16 +22,18 @@ https://github.com/user-attachments/assets/84be0b59-a752-4b01-a5df-9ba2403ca0f7
 
 ### 📌 Sobre o Projeto
 
-As configurações principais do meu **NAS HomeLab**. Construído a partir de um laptop de modelo antigo (**LGX130**) rodando **Samba Server (SMB3)**, o sistema cumpre duas funções estratégicas na rede:
+As configurações principais do meu **NAS HomeLab**. Construído a partir de um laptop de modelo antigo (**LGX130**) rodando **Samba Server (SMB3)**, o sistema cumpre duas funções principais na rede:
 
-1. **Servidor de Jogos para PS2 (OPL via SMB):** A escolha do protocolo SMB para o PlayStation 2 garante uma **taxa de transferência significativamente superior** à porta USB 1.1 nativa do console. Isso reduz o tempo de carregamento (*loading screens*) e elimina travamentos (*stuttering*) nas cutscenes dos jogos.
+1. **Servidor de Jogos para PS2 (OPL via SMB):** A escolha do protocolo SMB para o PlayStation 2 garante uma **taxa de transferência significativamente superior** à porta USB 1.1 nativa do video-game. Isso reduz o tempo de carregamento: as chamadas *loading
+screens* e elimina travamentos (*stuttering*) nas cutscenes dos jogos.
+1.1. Script simples para fazer o Backup de todo conteúdo do pasta do OPL para um diretório qualquer: HD Externo/pendrive.
 2. **Nuvem Privada:** Funciona como um armazenamento centralizado (estilo Google Drive) para compartilhamento seguro de arquivos com amigos.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/670193b0-41e5-4e0b-a21d-fda1eab71c21" alt="Simulação de Conectividade Packet Tracer" width="700">
 </p>
 
-> **Nota:** Os endereços IP exibidos nas demonstrações são meramente ilustrativos. Para verificar o fluxo completo da rede em execução, abra o arquivo `.pkt` no software **Cisco Packet Tracer**.
+> **Nota:** Os endereços IP exibidos nas demonstrações são meramente ilustrativos. Para verificar o fluxo completo da rede em execução, abra o arquivo `.pkt` no programa **Cisco Packet Tracer**.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0ab4b02d-f3ae-4b25-a049-02e3048cfdaa" alt="Topologia da Rede" width="700">
