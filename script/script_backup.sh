@@ -1,38 +1,42 @@
-#!bin/bash
+#!/bin/bash
 
-main(){
-    
-    cur_dir="$PWD"
-    dir_test="$HOME/backups_test_opl" #by SSH update connection?
-    backup_date="$(date +%Y-%m-%d_%H-%M-%S)"
-    log_file="$dir_test/backup_log_opl.txt" 
 
-    echo '=========================================================================' >> "$log_file"
+create_log() {
+    local status="$1"
+    local duracao="$2"
+    local cur_dir="$3"
+    local dir_test="$4"
+    local backup_date="$(date +%Y-%m-%d_%H-%M-%S)"
+    local log_file="$dir_test/backup_log_opl.txt"     
+
+    mkdir -p "$dir_test"
     
-    #Confirm if all the things's right
+
+}
+
+main() {
+
+    local cur_dir="$PWD"
+    local dir_test=""
+
+
     read -p "Let's start copying $cur_dir to $dir_test, alright? (Y/n) " response 
- 
-    #log file -> date here
-    echo "$backup_date - Backup Finished" >> "$log_file"
-    
-    #Only accepts the 'Y'string and not empty entry 
-    if [ "$response" != "Y" ] || [ -z "$response" ]; then
-        echo 'Stop, go back and press 'Y''
+
+    if [[ "$response" != "Y" && "$response" != "y" ]] || [ -z "$response" ]; then
+        echo "Stop, go back and press 'Y'"
+        exit 1
     else
-        echo 'copying...'
-         
-        : 'Copy recursively, it because Folders like: 
-        /DVD,/CD,ART,/VMC...'
-
-        cp -r "$cur_dir"/* "$dir_test/"
-
-        ls -la "$dir_test"
+        echo 'Copying...'
+        
+        if cp -r "$cur_dir"/* "$dir_test/"; then 
+            echo "[+] Backup caompleted sucessfull"
+            ls -la "$dir_test"
+        
+        else
+            echo "[-] Error while copying"
+        fi
     fi
 }
 
 main
-
-
-
-
 
