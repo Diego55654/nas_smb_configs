@@ -40,8 +40,11 @@ create_log() {
 
 main() {
 
-    local cur_dir="$PWD"
-    local dir_test="$HOME/backup_opl"
+    local cur_dir=$(zenity --file-selection --directory --title="Select a Folder destination to Process")
+
+    local dir_test=$(zenity --file-selection --directory --title="Select a Folder destination to Process")
+    
+    echo "Selected folder:$cur_dir to $dir_test"
     local start_time
 
     read -p "Let's start copying $cur_dir to $dir_test, alright? (Y/n) " response 
