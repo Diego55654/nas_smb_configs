@@ -1,5 +1,8 @@
 #!/bin/bash
 
+source ./helper.sh
+
+
 get_time() {
     local start_time="$1"
     local now
@@ -39,10 +42,10 @@ create_log() {
 main() {
     local cur_dir
     
-    cur_dir=$(zenity --file-selection --directory --title="Select Origin Folder");[ -z "$cur_dir" ] && exit 1 
+    cur_dir=$(select_folder "Select Origin Folder");[ -z "$cur_dir" ] && exit 1 
 
     local dir_test
-    dir_test=$(zenity --file-selection --directory --title="Select Destination Folder");[ -z "$dir_test" ] && exit 1
+    dir_test=$(select_folder ="Select Destination Folder");[ -z "$dir_test" ] && exit 1
     
     echo "Selected folder: $cur_dir to $dir_test"
     local start_time
